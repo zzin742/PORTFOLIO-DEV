@@ -1,41 +1,154 @@
-import { contentfulClient, ContentfulCMSClient } from "@/libs/contentful-cms"
-
 import Header from "@/components/layout/Header"
 import Main from "@/components/layout/Main"
-import Hero from "../components/layout/sections/Hero"
-import About from "../components/layout/sections/About"
-import Projects from "../components/layout/sections/Projects"
-import Skills from "../components/layout/sections/Skills"
+import Hero from "@/components/layout/sections/Hero"
+import About from "@/components/layout/sections/About"
+import Projects from "@/components/layout/sections/Projects"
+import Skills from "@/components/layout/sections/Skills"
 import Footer from "@/components/layout/Footer"
 import ScrollToTopButton from "@/components/buttons/ScrollToTopButton"
 
-export const revalidate = parseInt(process.env.REVALIDATE_TIME || "60")
+import { Project, SkillsMap } from "@/types/general"
 
-//Buscando as informações dos projetos e habilidades na contenful CMS.
-async function fetchData() {
-    const [projectEntries, skillEntries, cvURL] = await Promise.all([
-        contentfulClient.fetchProjects(),
-        contentfulClient.fetchSkills(),
-        contentfulClient.getAssetUrl({ "fields.title": "cv-nalbert-cerqueira" })
-    ])
+/* =======================
+   PROJETOS
+======================= */
+const projects: Project[] = [
+    {
+        id: "duplo-foco",
+        name: "Duplo Controle Financeiro",
+        description:
+            "Aplicação web para organização financeira pessoal, com controle de ciclos de pagamento, receitas, gastos, caixinhas e visualização clara da vida financeira.",
+        projectUrl: "https://duplo-foco-financeiro.lovable.app/",
+        githubUrl: null,
+        banner: {
+            url: "/imgs/duplo-foco.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+    },
 
-    const skillsMap = ContentfulCMSClient.generateSkillsMap(skillEntries)
-    const projectList = await ContentfulCMSClient.getFormattedProjectList(projectEntries)
+    {
+        id: "central-operacoes",
+        name: "Central de Operações Empresariais",
+        description:
+            "Sistema interno desenvolvido para centralizar consultas, controles operacionais e rotinas administrativas, com foco em produtividade, organização e visão estratégica.",
+        projectUrl: null,
+        githubUrl: null,
+        banner: {
+            url: "/imgs/central-operacoes.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+    },
 
-    return { skillsMap, projectList, cvURL }
+    {
+        id: "graciano-glow",
+        name: "Portfólio Empresarial",
+        description:
+            "Landing page institucional desenvolvida para a Graciano Soluções, focada em identidade visual forte, apresentação de serviços e conversão de leads.",
+        projectUrl: "https://janailson.vercel.app/",
+        githubUrl: "https://github.com/zzin742/graciano-grow-guide.git",
+        banner: {
+            url: "/imgs/graciano-glow.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    }
+]
+
+/* =======================
+   SKILLS (IDs NORMALIZADOS)
+======================= */
+const skillsMap: SkillsMap = {
+    html: {
+        id: "html",
+        name: "HTML5",
+        description: "Estruturação semântica de páginas web."
+    },
+
+    css: {
+        id: "css",
+        name: "CSS3",
+        description: "Estilização e layout responsivo."
+    },
+
+    sass: {
+        id: "sass",
+        name: "Sass",
+        description: "Pré-processador CSS para organização e reutilização de estilos."
+    },
+
+    javascript: {
+        id: "javascript",
+        name: "JavaScript",
+        description: "Interatividade e comportamento dinâmico em aplicações web."
+    },
+
+    react: {
+        id: "react",
+        name: "React",
+        description: "Biblioteca para criação de interfaces componentizadas."
+    },
+
+    next: {
+        id: "next",
+        name: "Next.js",
+        description: "Framework React com renderização híbrida e otimizações."
+    },
+
+    node: {
+        id: "node",
+        name: "Node.js",
+        description: "Execução de JavaScript no backend."
+    },
+
+    express: {
+        id: "express",
+        name: "Express.js",
+        description: "Framework minimalista para APIs em Node.js."
+    },
+
+    mongodb: {
+        id: "mongodb",
+        name: "MongoDB",
+        description: "Banco de dados NoSQL orientado a documentos."
+    },
+
+    mysql: {
+        id: "mysql",
+        name: "MySQL",
+        description: "Banco de dados relacional amplamente utilizado."
+    },
+
+    git: {
+        id: "git",
+        name: "Git",
+        description: "Controle de versão distribuído."
+    },
+
+    github: {
+        id: "github",
+        name: "GitHub",
+        description: "Hospedagem e colaboração de código."
+    }
 }
 
-export default async function Home() {
-    const { projectList, skillsMap, cvURL } = await fetchData()
-
+/* =======================
+   PAGE
+======================= */
+export default function Home() {
     return (
         <>
             <Header />
             <Main>
-                <Hero cvURL={cvURL || ""} />
+            <Hero cvURL="/cv/José%20Luiz%20-%20Full%20Stack.pdf" />
+
                 <About />
-                <Projects projectList={projectList || []} />
-                <Skills skillsMap={skillsMap || {}} />
+                <Projects projectList={projects} />
+                <Skills skillsMap={skillsMap} />
             </Main>
             <Footer />
             <ScrollToTopButton />

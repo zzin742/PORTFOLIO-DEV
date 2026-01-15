@@ -26,9 +26,9 @@ interface ClassNameMap {
 
 const sectionLinks: SectionLink[] = [
     { id: 1, href: "#home", content: "Início" },
-    { id: 2, href: "#about", content: "Sobre mim" },
+    { id: 2, href: "#about", content: "Sobre" },
     { id: 3, href: "#projects", content: "Projetos" },
-    { id: 4, href: "#skills", content: "Tecnologias" }
+    { id: 4, href: "#skills", content: "Skills" }
 ]
 
 export default function Header() {
@@ -43,7 +43,11 @@ export default function Header() {
             "header__inner-container",
             `${isScrollOnTop ? "" : "header__inner-container--thin"}`
         ],
-        header: ["header", `${isScrollOnTop ? "" : "header--shaded"}`, `${isHidden ? "header--hidden" : ""}`]
+        header: [
+            "header",
+            `${isScrollOnTop ? "" : "header--shaded"}`,
+            `${isHidden ? "header--hidden" : ""}`
+        ]
     }
 
     function renderNavLinks() {
@@ -74,15 +78,20 @@ export default function Header() {
         >
             <div className={classNames.innerContainer.join(" ").trim()}>
                 <OpenMenuButton />
-                <Link aria-label="início" href="/">
+
+                <Link aria-label="Início" href="/">
                     <Logo />
                 </Link>
+
                 <div className={classNames.navBox.join(" ").trim()}>
                     <nav className={classNames.navbar.join(" ").trim()}>
                         <CloseMenuButton />
-                        <ul className="navbar__list header__nav-list">{renderNavLinks()}</ul>
+                        <ul className="navbar__list header__nav-list">
+                            {renderNavLinks()}
+                        </ul>
                     </nav>
                 </div>
+
                 <ThemeButton />
             </div>
         </MotionContainer>

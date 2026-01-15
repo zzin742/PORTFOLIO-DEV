@@ -23,6 +23,7 @@ export default function Projects(props: ProjectsProps) {
 
     function renderProjectsCards() {
         const end = moreProjects === "open" ? props.projectList.length : 4
+
         return props.projectList.map((project, index) => (
             <ProjectCard
                 isVisible={index < end}
@@ -56,11 +57,28 @@ export default function Projects(props: ProjectsProps) {
                     <motion.h2 variants={projectsVariants.title} className="projects__title">
                         Projetos
                     </motion.h2>
-                    <motion.span variants={projectsVariants.titleLine} className="projects__title-line" />
+
+                    <motion.p
+                        variants={projectsVariants.title}
+                        className="projects__subtitle"
+                    >
+                        Projetos demonstrativos e em constante evolução. 
+                        Novos trabalhos serão adicionados conforme meu desenvolvimento técnico.
+                    </motion.p>
+
+                    <motion.span
+                        variants={projectsVariants.titleLine}
+                        className="projects__title-line"
+                    />
                 </div>
-                <motion.div variants={projectsVariants.cardsWrapper} className="projects__cards-wrapper">
+
+                <motion.div
+                    variants={projectsVariants.cardsWrapper}
+                    className="projects__cards-wrapper"
+                >
                     {renderProjectsCards()}
                 </motion.div>
+
                 <motion.button
                     variants={projectsVariants.toggleButton}
                     onClick={toggleMoreProjects}
@@ -69,7 +87,7 @@ export default function Projects(props: ProjectsProps) {
                     aria-label={moreProjects === "open" ? "Exibir mais projetos" : "Exibir menos projetos"}
                 >
                     <span className="btn--show-more__content">
-                        {moreProjects === "open" ? "Recolher" : "Ver Mais"}
+                        {moreProjects === "open" ? "Recolher" : "Ver mais"}
                         <MdOutlineKeyboardArrowDown
                             aria-hidden="true"
                             focusable="false"

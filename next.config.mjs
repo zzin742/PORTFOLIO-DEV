@@ -8,9 +8,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: "https",
-                hostname: process.env.CMS_HOSTNAME,
+                hostname: process.env.CMS_HOSTNAME || "images.ctfassets.net",
                 port: "",
-                pathname: `/${process.env.CMS_SPACE_ID}/**`
+                pathname: `/${process.env.CMS_SPACE_ID || ""}/**`
             }
         ]
     }

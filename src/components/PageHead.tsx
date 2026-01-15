@@ -3,36 +3,55 @@ export default function PageHead() {
         <>
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-            <title>Nalbert Cerqueira | Desenvolvedor Front-end</title>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+            />
+
+            {/* Título e descrição principal */}
+            <title>José Luiz | Desenvolvedor Full Stack & TI</title>
             <meta
                 name="description"
-                content="Desenvolvedor Front-end com experiência em React, Next.js, React Native, TypeScript, TailwindCSS, Node.js, MySQL e Mongodb."
+                content="José Luiz, desenvolvedor Full Stack e estudante de Análise e Desenvolvimento de Sistemas. Experiência com React, Next.js, TypeScript, Node.js, bancos de dados e infraestrutura de TI."
             />
-            <meta name="copyright" content="Nalbert Cerqueira 2024" />
+
+            <meta name="copyright" content="José Luiz 2026" />
+
+            {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Nalbert Cerqueira | Desenvolvedor Front-end" />
+            <meta
+                name="twitter:title"
+                content="José Luiz | Desenvolvedor Full Stack & TI"
+            />
             <meta
                 name="twitter:description"
-                content="Desenvolvedor Front-end com experiência em React, Next.js, React Native, TypeScript, TailwindCSS, Node.js, MySQL e Mongodb."
+                content="Portfólio de José Luiz, desenvolvedor Full Stack com foco em aplicações web modernas, automações e infraestrutura."
             />
-            <meta name="twitter:image" content="https://nalbertdev.com/imgs/preview.webp" />
-            <meta property="og:image" content="https://nalbertdev.com/imgs/preview.webp" />
-            <meta property="og:image:type" content="image/webp" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="620" />
-            <meta property="og:site_name" content="nalbertdev.com" />
-            <meta property="og:url" content="https://nalbertdev.com" />
+            <meta name="twitter:image" content="/preview.png" />
+
+            {/* Open Graph */}
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="Nalbert Cerqueira | Desenvolvedor Front-end" />
+            <meta property="og:title" content="José Luiz | Desenvolvedor Full Stack & TI" />
             <meta
                 property="og:description"
-                content="Desenvolvedor Front-end com experiência em React, Next.js, React Native, TypeScript, TailwindCSS, Node.js, MySQL e Mongodb."
+                content="Portfólio profissional de José Luiz, desenvolvedor Full Stack e estudante de ADS, com foco em web, automações e infraestrutura."
             />
-            <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-            <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="canonical" href="https://nalbertdev.com/" />
+            <meta property="og:image" content="/preview.png" />
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:site_name" content="José Luiz Portfolio" />
+            <meta property="og:url" content="/" />
+
+            {/* Ícones */}
+            <link rel="icon" type="image/png" href="/icon.png" />
+            <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
+            <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+            {/* Canonical (ajusta depois do deploy se quiser) */}
+            <link rel="canonical" href="/" />
+
+            {/* Fontes */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
                 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"

@@ -12,7 +12,7 @@ export default function Logo() {
             onMouseLeave={animationOFF}
             style={{ backgroundColor: colorsList[colorIndex] }}
         >
-            NC
+            JZ
         </span>
     )
 }

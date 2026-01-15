@@ -6,7 +6,7 @@ import { Fragment } from "react"
 import { heroVariants, sideLinkVariants } from "@/libs/framer-motion"
 
 import SideLinks from "@/components/SideLinks"
-import profilePicture from "../../../../public/imgs/profile.jpeg"
+import profilePicture from "../../../../public/imgs/profile.png"
 import MotionContainer from "../MotionContainer"
 
 interface TitleSpan {
@@ -16,10 +16,10 @@ interface TitleSpan {
 }
 
 const titleSpans: TitleSpan[] = [
-    { id: 1, className: "hero__title hero__title--main", content: "Nalbert" },
-    { id: 2, className: "hero__title hero__title--main", content: "Cerqueira" },
+    { id: 1, className: "hero__title hero__title--main", content: "José" },
+    { id: 2, className: "hero__title hero__title--main", content: "Luiz" },
     { id: 3, className: "hero__title hero__title--sub", content: "Desenvolvedor" },
-    { id: 4, className: "hero__title hero__title--sub", content: "Front-end" },
+    { id: 4, className: "hero__title hero__title--sub", content: "Full Stack" },
     { id: 5, className: "hero__title hero__title--main", content: "." }
 ]
 
@@ -56,27 +56,29 @@ export default function Hero({ cvURL }: { cvURL: string }) {
                     <motion.div variants={heroVariants.avatar} className="hero__avatar-container">
                         <Image
                             sizes="(max-width: 920px) 100vw, 50vw"
-                            placeholder="blur"
                             className="hero__avatar-img"
                             src={profilePicture}
-                            alt="Nalbert cerqueira - Desenvolvedor Front-end"
+                            alt="José Luiz - Desenvolvedor Full Stack e TI"
                         />
                     </motion.div>
+
                     <div className="hero__left-content">
                         <h1 className="hero__title">{renderTitleSpans()}</h1>
+
                         <motion.a
                             custom={7}
                             variants={heroVariants.leftContentItems}
                             download
                             target="_blank"
                             role="button"
-                            aria-label="Obtenha uma cópia do meu CV"
+                            aria-label="Obtenha uma cópia do meu currículo"
                             href={cvURL}
                             className="btn btn--download hero__btn"
                             rel="noreferrer"
                         >
                             <span className="btn--download__content">Download CV</span>
                         </motion.a>
+
                         <SideLinks animationConfigs={sideLinkVariants} />
                     </div>
                 </div>

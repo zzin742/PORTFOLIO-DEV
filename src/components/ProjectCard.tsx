@@ -13,15 +13,17 @@ interface ProjectCardProps {
     name: string
     index: number
     children: ReactNode
-    projectUrl: string
+    projectUrl?: string | null
     isVisible: boolean
-    githubUrl: string
+    githubUrl?: string | null
     techList: string[]
     banner: ProjectBanner
 }
 
-//Card de projeto utilizado em Projects.jsx.
 export default function ProjectCard(props: ProjectCardProps) {
+    const hasProjectLink = Boolean(props.projectUrl)
+    const hasGithubLink = Boolean(props.githubUrl)
+
     function renderTechItems(techList: string[]) {
         return techList.map((tech, i) => (
             <li key={i} className="project__tech-item">
@@ -30,9 +32,20 @@ export default function ProjectCard(props: ProjectCardProps) {
         ))
     }
 
+    const BannerImage = (
+        <Image
+            sizes="(max-width: 920px) 100vw, 50vw"
+            className="project__banner-img"
+            src={props.banner.url}
+            alt={props.name}
+            width={props.banner.width}
+            height={props.banner.height}
+        />
+    )
+
     return (
         <MotionContainer
-            once={true}
+            once
             elementType="div"
             elementProps={{
                 initial: "hidden",
@@ -42,54 +55,57 @@ export default function ProjectCard(props: ProjectCardProps) {
             }}
         >
             <div className="project__skew">
-                <Link
-                    className="project__link-banner"
-                    ariaLabel={`Link para o projeto ${props.name}`}
-                    href={props.projectUrl}
-                >
-                    <Image
-                        sizes="(max-width: 920px) 100vw, 50vw"
-                        aria-hidden={true}
-                        className="project__banner-img"
-                        src={"https:" + props.banner.url}
-                        alt={props.banner.alt}
-                        height={props.banner.height}
-                        width={props.banner.width}
-                        placeholder="blur"
-                        blurDataURL={props.banner.base64Url}
-                    />
-                </Link>
+                <div className="project__banner">
+                    {hasProjectLink ? (
+                        <Link
+                            className="project__link-banner"
+                            href={props.projectUrl!}
+                            ariaLabel={`Abrir projeto ${props.name}`}
+                        >
+                            {BannerImage}
+                        </Link>
+                    ) : (
+                        BannerImage
+                    )}
+                </div>
+
                 <div className="project__content">
-                    <h3>
-                        <Link className="project__link-title" href={props.projectUrl}>
-                            {props.name}
-                        </Link>
+                    <h3 className="project__title">
+                        {hasProjectLink ? (
+                            <Link className="project__link-title" href={props.projectUrl!}>
+                                {props.name}
+                            </Link>
+                        ) : (
+                            props.name
+                        )}
                     </h3>
+
                     <p className="project__description">{props.children}</p>
-                    <ul className="project__tech-list">{renderTechItems(props.techList)}</ul>
+
+                    <ul className="project__tech-list">
+                        {renderTechItems(props.techList)}
+                    </ul>
+
                     <div className="project__external-links">
-                        <Link
-                            ariaLabel={`Link para ${props.name} no github`}
-                            className="project__ext-link"
-                            href={props.githubUrl}
-                        >
-                            <SlSocialGithub
-                                aria-hidden="true"
-                                focusable="false"
-                                className="project__ext-icon"
-                            />
-                        </Link>
-                        <Link
-                            ariaLabel={`Link para o projeto ${props.name}`}
-                            className="project__ext-link"
-                            href={props.projectUrl}
-                        >
-                            <VscLinkExternal
-                                aria-hidden="true"
-                                focusable="false"
-                                className="project__ext-icon"
-                            />
-                        </Link>
+                        {hasGithubLink && (
+                            <Link
+                                className="project__ext-link"
+                                href={props.githubUrl!}
+                                ariaLabel="GitHub do projeto"
+                            >
+                                <SlSocialGithub className="project__ext-icon" />
+                            </Link>
+                        )}
+
+                        {hasProjectLink && (
+                            <Link
+                                className="project__ext-link"
+                                href={props.projectUrl!}
+                                ariaLabel="Abrir projeto"
+                            >
+                                <VscLinkExternal className="project__ext-icon" />
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

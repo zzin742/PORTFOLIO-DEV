@@ -5,27 +5,27 @@ import { SocialLink } from "./types"
 const socialLinks: SocialLink[] = [
     {
         id: 1,
-        href: "https://github.com/nalbertcerqueira",
-        ariaLabel: "Meu perfil no github",
+        href: "https://github.com/zzin742",
+        ariaLabel: "Meu perfil no GitHub",
         icon: BsGithub
     },
     {
         id: 2,
-        href: "https://www.linkedin.com/in/nalbert-cerqueira-53981a162/",
+        href: "https://www.linkedin.com/in/jos%C3%A9-luiz-115861362",
         ariaLabel: "Meu perfil no LinkedIn",
         icon: BsLinkedin
     },
     {
         id: 3,
-        href: "mailto:nalbertc.p@gmail.com",
+        href: "mailto:josehtl07@gmail.com",
         ariaLabel: "Email para contato",
         icon: SiGmail,
         target: "_self"
     },
     {
         id: 4,
-        href: "https://www.instagram.com/ncerqueiraa/",
-        ariaLabel: "Meu instagram pessoal",
+        href: "https://www.instagram.com/joselz_dev",
+        ariaLabel: "Meu Instagram profissional",
         icon: FaInstagramSquare,
         iconStyle: { height: "1.5rem", width: "1.5rem" }
     }
@@ -56,33 +56,33 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer__inner-container">
                 <div className="footer__social">
-                    <ul className="footer__social-wrapper">{renderLinkList()}</ul>
+                    <ul className="footer__social-wrapper">
+                        {renderLinkList()}
+                    </ul>
+
                     <a
                         className="footer__mailto-link"
                         aria-label="Email para contato"
-                        href="mailto:nalbertc.p@gmail.com"
+                        href="mailto:josehtl07@gmail.com"
                     >
-                        nalbertc.p@gmail.com
+                        josehtl07@gmail.com
                     </a>
                 </div>
+
                 <div className="footer__attributions">
                     <p className="footer__copyright">
-                        Copyright © 2023{" "}
-                        <Link className="footer__link-bottom" href="https://nalbertdev.com">
-                            nalbertdev.com.
-                        </Link>{" "}
-                        Todos os direitos reservados.
+                        © {new Date().getFullYear()} José Luiz. Todos os direitos reservados.
                     </p>
+
                     <p className="footer__author">
                         Desenvolvido por{" "}
                         <Link
                             className="footer__link-bottom"
-                            href="https://github.com/nalbertcerqueira"
-                            ariaLabel="Link para meu perfil no github"
+                            href="https://github.com/zzin742"
+                            ariaLabel="Link para meu perfil no GitHub"
                         >
-                            Nalbert Cerqueira
-                        </Link>{" "}
-                        ✌
+                            José Luiz
+                        </Link>
                     </p>
                 </div>
             </div>
