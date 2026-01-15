@@ -6,19 +6,20 @@ export interface CustomVariants {
 
 export interface ProjectBanner {
     url: string
-    base64Url?: string
-    alt?: string
-    height: number
     width: number
+    height: number
+
+    // opcionais para compatibilidade com plaiceholder / next-image
+    alt?: string
+    base64Url?: string
 }
 
 export interface Project {
-    name: string
     id: string
-    slug?: number
+    name: string
     description: string
-    projectUrl?: string   // ✅ opcional
-    githubUrl?: string    // ✅ opcional
+    projectUrl?: string
+    githubUrl?: string
     techList: string[]
     banner: ProjectBanner
 }
