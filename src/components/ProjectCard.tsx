@@ -13,20 +13,26 @@ interface ProjectCardProps {
     name: string
     index: number
     children: ReactNode
-    projectUrl?: string | null
+    projectUrl?: string
+    githubUrl?: string
     isVisible: boolean
-    githubUrl?: string | null
     techList: string[]
     banner: ProjectBanner
 }
 
-export default function ProjectCard(props: ProjectCardProps) {
-    const hasProjectLink = Boolean(props.projectUrl)
-    const hasGithubLink = Boolean(props.githubUrl)
-
-    function renderTechItems(techList: string[]) {
-        return techList.map((tech, i) => (
-            <li key={i} className="project__tech-item">
+export default function ProjectCard({
+    name,
+    index,
+    children,
+    projectUrl,
+    githubUrl,
+    isVisible,
+    techList,
+    banner
+}: ProjectCardProps) {
+    function renderTechItems(list: string[]) {
+        return list.map((tech) => (
+            <li key={tech} className="project__tech-item">
                 {tech}
             </li>
         ))
@@ -36,10 +42,10 @@ export default function ProjectCard(props: ProjectCardProps) {
         <Image
             sizes="(max-width: 920px) 100vw, 50vw"
             className="project__banner-img"
-            src={props.banner.url}
-            alt={props.name}
-            width={props.banner.width}
-            height={props.banner.height}
+            src={banner.url}
+            alt={name}
+            width={banner.width}
+            height={banner.height}
         />
     )
 
@@ -49,18 +55,18 @@ export default function ProjectCard(props: ProjectCardProps) {
             elementType="div"
             elementProps={{
                 initial: "hidden",
-                className: `project ${props.isVisible ? "project--visible" : ""}`.trim(),
-                custom: props.index % 2,
+                className: `project ${isVisible ? "project--visible" : ""}`.trim(),
+                custom: index % 2,
                 variants: projectsVariants.projectCard
             }}
         >
             <div className="project__skew">
                 <div className="project__banner">
-                    {hasProjectLink ? (
+                    {projectUrl ? (
                         <Link
                             className="project__link-banner"
-                            href={props.projectUrl!}
-                            ariaLabel={`Abrir projeto ${props.name}`}
+                            href={projectUrl}
+                            ariaLabel={`Abrir projeto ${name}`}
                         >
                             {BannerImage}
                         </Link>
@@ -71,36 +77,36 @@ export default function ProjectCard(props: ProjectCardProps) {
 
                 <div className="project__content">
                     <h3 className="project__title">
-                        {hasProjectLink ? (
-                            <Link className="project__link-title" href={props.projectUrl!}>
-                                {props.name}
+                        {projectUrl ? (
+                            <Link className="project__link-title" href={projectUrl}>
+                                {name}
                             </Link>
                         ) : (
-                            props.name
+                            name
                         )}
                     </h3>
 
-                    <p className="project__description">{props.children}</p>
+                    <p className="project__description">{children}</p>
 
                     <ul className="project__tech-list">
-                        {renderTechItems(props.techList)}
+                        {renderTechItems(techList)}
                     </ul>
 
                     <div className="project__external-links">
-                        {hasGithubLink && (
+                        {githubUrl && (
                             <Link
                                 className="project__ext-link"
-                                href={props.githubUrl!}
+                                href={githubUrl}
                                 ariaLabel="GitHub do projeto"
                             >
                                 <SlSocialGithub className="project__ext-icon" />
                             </Link>
                         )}
 
-                        {hasProjectLink && (
+                        {projectUrl && (
                             <Link
                                 className="project__ext-link"
-                                href={props.projectUrl!}
+                                href={projectUrl}
                                 ariaLabel="Abrir projeto"
                             >
                                 <VscLinkExternal className="project__ext-icon" />
