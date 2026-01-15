@@ -26,12 +26,11 @@ const projects: Project[] = [
         },
         techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     },
-
     {
         id: "central-operacoes",
         name: "Central de Operações Empresariais",
         description:
-            "Sistema interno desenvolvido para centralizar consultas, controles operacionais e rotinas administrativas, com foco em produtividade, organização e visão estratégica.",
+            "Sistema interno desenvolvido para centralizar consultas, controles operacionais e rotinas administrativas.",
         banner: {
             url: "/imgs/central-operacoes.png",
             width: 1200,
@@ -39,12 +38,11 @@ const projects: Project[] = [
         },
         techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
     },
-
     {
         id: "graciano-glow",
         name: "Portfólio Empresarial",
         description:
-            "Landing page institucional desenvolvida para a Graciano Soluções, focada em identidade visual forte, apresentação de serviços e conversão de leads.",
+            "Landing page institucional desenvolvida para a Graciano Soluções.",
         projectUrl: "https://janailson.vercel.app/",
         githubUrl: "https://github.com/zzin742/graciano-grow-guide.git",
         banner: {
@@ -60,50 +58,17 @@ const projects: Project[] = [
    SKILLS
 ======================= */
 const skillsMap: SkillsMap = {
-    html: {
-        name: "HTML5",
-        description: "Estruturação semântica de páginas web."
-    },
-    css: {
-        name: "CSS3",
-        description: "Estilização e layout responsivo."
-    },
-    sass: {
-        name: "Sass",
-        description: "Pré-processador CSS para organização e reutilização de estilos."
-    },
-    javascript: {
-        name: "JavaScript",
-        description: "Interatividade e comportamento dinâmico em aplicações web."
-    },
-    react: {
-        name: "React",
-        description: "Biblioteca para criação de interfaces componentizadas."
-    },
-    next: {
-        name: "Next.js",
-        description: "Framework React com renderização híbrida e otimizações."
-    },
-    node: {
-        name: "Node.js",
-        description: "Execução de JavaScript no backend."
-    },
-    mongodb: {
-        name: "MongoDB",
-        description: "Banco de dados NoSQL orientado a documentos."
-    },
-    mysql: {
-        name: "MySQL",
-        description: "Banco de dados relacional amplamente utilizado."
-    },
-    git: {
-        name: "Git",
-        description: "Controle de versão distribuído."
-    },
-    github: {
-        name: "GitHub",
-        description: "Hospedagem e colaboração de código."
-    }
+    html: { name: "HTML5", description: "Estruturação semântica de páginas web." },
+    css: { name: "CSS3", description: "Estilização e layout responsivo." },
+    sass: { name: "Sass", description: "Pré-processador CSS." },
+    javascript: { name: "JavaScript", description: "Interatividade web." },
+    react: { name: "React", description: "Interfaces componentizadas." },
+    next: { name: "Next.js", description: "Framework React moderno." },
+    node: { name: "Node.js", description: "Backend em JavaScript." },
+    mongodb: { name: "MongoDB", description: "Banco NoSQL." },
+    mysql: { name: "MySQL", description: "Banco relacional." },
+    git: { name: "Git", description: "Controle de versão." },
+    github: { name: "GitHub", description: "Hospedagem de código." }
 }
 
 /* =======================
