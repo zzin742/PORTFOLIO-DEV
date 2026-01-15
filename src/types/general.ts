@@ -6,8 +6,8 @@ export interface CustomVariants {
 
 export interface ProjectBanner {
     url: string
-    base64Url: string
-    alt: string
+    base64Url?: string
+    alt?: string
     height: number
     width: number
 }
@@ -17,8 +17,8 @@ export interface Project {
     id: string
     slug?: number
     description: string
-    projectUrl: string
-    githubUrl: string
+    projectUrl?: string   // ✅ opcional
+    githubUrl?: string    // ✅ opcional
     techList: string[]
     banner: ProjectBanner
 }
