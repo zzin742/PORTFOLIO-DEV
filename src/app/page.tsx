@@ -14,10 +14,55 @@ import { Project, SkillsMap } from "@/types/general"
 ======================= */
 const projects: Project[] = [
     {
+        id: "calculadora-iphone",
+        name: "Calculadora iPhone (Clone)",
+        description:
+            "Clone fiel da calculadora do iPhone, desenvolvido com foco em interface, animações e experiência do usuário.",
+        projectUrl: "https://v0-ip-hone-calculator-clone-sigma.vercel.app/",
+        githubUrl: "https://github.com/zzin742/calculadora-iphone-nb.git",
+        banner: {
+            url: "/imgs/calculadora-iphone.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["HTML", "CSS", "JavaScript"]
+    },
+
+    {
+        id: "site-compras",
+        name: "Smart Cart Assistant",
+        description:
+            "Aplicação web para criação e organização de listas de compras, permitindo adicionar produtos, valores e acompanhar o custo total.",
+        projectUrl: "https://shop-plan-daily.lovable.app/",
+        githubUrl: "https://github.com/zzin742/smart-cart-assistant.git",
+        banner: {
+            url: "/imgs/site-compras.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+    },
+
+    {
+        id: "graciano-glow",
+        name: "Site Institucional – Graciano Soluções",
+        description:
+            "Landing page institucional desenvolvida para apresentação de serviços, identidade visual e posicionamento digital.",
+        projectUrl: "https://janailson.vercel.app/",
+        githubUrl: "https://github.com/zzin742/graciano-grow-guide.git",
+        banner: {
+            url: "/imgs/graciano-glow.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    },
+
+    {
         id: "duplo-foco",
         name: "Duplo Controle Financeiro",
         description:
-            "Aplicação web para organização financeira pessoal, com controle de ciclos de pagamento, receitas, gastos, caixinhas e visualização clara da vida financeira.",
+            "Aplicação web para organização financeira pessoal, com controle de receitas, gastos, caixinhas e ciclos de pagamento.",
         projectUrl: "https://duplo-foco-financeiro.lovable.app/",
         banner: {
             url: "/imgs/duplo-foco.png",
@@ -38,39 +83,8 @@ const projects: Project[] = [
             height: 630
         },
         techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
-    },
-
-    {
-        id: "graciano-glow",
-        name: "Site Institucional – Graciano Soluções",
-        description:
-            "Landing page institucional desenvolvida para apresentação de serviços, identidade visual e posicionamento digital da empresa Graciano Soluções.",
-        projectUrl: "https://janailson.vercel.app/",
-        githubUrl: "https://github.com/zzin742/graciano-grow-guide.git",
-        banner: {
-            url: "/imgs/graciano-glow.png",
-            width: 1200,
-            height: 630
-        },
-        techList: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
-    },
-
-    {
-        id: "calculadora-iphone",
-        name: "Calculadora iPhone (Clone)",
-        description:
-            "Clone fiel da calculadora do iPhone, desenvolvido com foco em interface, animações e experiência do usuário, reproduzindo o visual e comportamento do app original.",
-        projectUrl: "https://v0-ip-hone-calculator-clone-sigma.vercel.app/",
-        githubUrl: "https://github.com/zzin742/calculadora-iphone-nb.git",
-        banner: {
-            url: "/imgs/calculadora-iphone.png",
-            width: 1200,
-            height: 630
-        },
-        techList: ["HTML", "CSS", "JavaScript"]
     }
 ]
-
 
 /* =======================
    SKILLS
