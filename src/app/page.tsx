@@ -26,6 +26,7 @@ const projects: Project[] = [
         },
         techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     },
+
     {
         id: "central-operacoes",
         name: "Central de Operações Empresariais",
@@ -38,11 +39,12 @@ const projects: Project[] = [
         },
         techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
     },
+
     {
         id: "graciano-glow",
-        name: "Portfólio Empresarial",
+        name: "Site Institucional – Graciano Soluções",
         description:
-            "Landing page institucional desenvolvida para a Graciano Soluções.",
+            "Landing page institucional desenvolvida para apresentação de serviços, identidade visual e posicionamento digital da empresa Graciano Soluções.",
         projectUrl: "https://janailson.vercel.app/",
         githubUrl: "https://github.com/zzin742/graciano-grow-guide.git",
         banner: {
@@ -51,8 +53,24 @@ const projects: Project[] = [
             height: 630
         },
         techList: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+    },
+
+    {
+        id: "calculadora-iphone",
+        name: "Calculadora iPhone (Clone)",
+        description:
+            "Clone fiel da calculadora do iPhone, desenvolvido com foco em interface, animações e experiência do usuário, reproduzindo o visual e comportamento do app original.",
+        projectUrl: "https://v0-ip-hone-calculator-clone-sigma.vercel.app/",
+        githubUrl: "https://github.com/zzin742/calculadora-iphone-nb.git",
+        banner: {
+            url: "/imgs/calculadora-iphone.png",
+            width: 1200,
+            height: 630
+        },
+        techList: ["HTML", "CSS", "JavaScript"]
     }
 ]
+
 
 /* =======================
    SKILLS
