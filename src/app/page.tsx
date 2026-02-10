@@ -28,22 +28,35 @@ const projects: Project[] = [
         techList: ["HTML", "CSS", "JavaScript"]
     },
 
+{
+    id: "nfse-hub",
+    name: "NFS-e Hub",
+    description:
+        "Landing page e produto digital para um robô desktop que automatiza o download de NFS-e (XML e PDF) diretamente do Portal Nacional. Focado em contadores e escritórios contábeis, o projeto destaca automação fiscal, economia de tempo e compatibilidade com o novo layout do Portal Nacional.",
+    projectUrl: "https://nfse-hub.vercel.app/",
+    githubUrl: "https://github.com/zzin742/nfse-hub-site.git",
+    banner: {
+        url: "/imgs/nfse-hub.png",
+        width: 1200,
+        height: 630
+    },
+    techList: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"]
+},
+
     {
-        id: "site-compras",
-        name: "Smart Cart Assistant",
+        id: "central-operacoes",
+        name: "Central de Operações Empresariais",
         description:
-            "Aplicação web para criação e organização de listas de compras, permitindo adicionar produtos, valores e acompanhar o custo total.",
-        projectUrl: "https://shop-plan-daily.lovable.app/",
-        githubUrl: "https://github.com/zzin742/smart-cart-assistant.git",
+            "Sistema interno desenvolvido para centralizar consultas, controles operacionais e rotinas administrativas.",
         banner: {
-            url: "/imgs/site-compras.png",
+            url: "/imgs/central-operacoes.png",
             width: 1200,
             height: 630
         },
-        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
     },
 
-    {
+ {
         id: "graciano-glow",
         name: "Site Institucional – Graciano Soluções",
         description:
@@ -73,16 +86,18 @@ const projects: Project[] = [
     },
 
     {
-        id: "central-operacoes",
-        name: "Central de Operações Empresariais",
+        id: "site-compras",
+        name: "Smart Cart Assistant",
         description:
-            "Sistema interno desenvolvido para centralizar consultas, controles operacionais e rotinas administrativas.",
+            "Aplicação web para criação e organização de listas de compras, permitindo adicionar produtos, valores e acompanhar o custo total.",
+        projectUrl: "https://shop-plan-daily.lovable.app/",
+        githubUrl: "https://github.com/zzin742/smart-cart-assistant.git",
         banner: {
-            url: "/imgs/central-operacoes.png",
+            url: "/imgs/site-compras.png",
             width: 1200,
             height: 630
         },
-        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"]
+        techList: ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     }
 ]
 
